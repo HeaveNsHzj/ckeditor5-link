@@ -156,7 +156,7 @@ export default class LinkUI extends Plugin {
 		this.listenTo( formView, 'submit', () => {
 			const customAttributes = {};
 			for ( const switchButton of formView.customAttributesView ) {
-				customAttributes[ switchButton.value ] = switchButton.isOn;
+				customAttributes[ switchButton.name ] = switchButton.isOn;
 			}
 			editor.execute( 'link', formView.urlInputView.inputView.element.value, customAttributes );
 			this._removeFormView();
